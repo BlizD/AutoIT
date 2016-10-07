@@ -1,0 +1,625 @@
+author|0|body_xml
+iabbliz|2013/07/23 12:01:14|
+iabbliz|2013/08/01 07:56:00|Error: Ссылка на необъявленный префикс пространства имен: &apos;&apos;slittingPlanNS&apos;&apos;.
+ &lt;slittingPlanNS:slittingPlan&gt;
+iabbliz|2013/08/01 07:56:23|<files alt="отправил (-а) файл &quot;solution_123456.1_01082013_2.xml&quot;">
+<file size="4769" index="0" tid="953215566">solution_123456.1_01082013_2.xml</file></files>
+iabbliz|2013/08/01 07:56:27|вот так поправил
+mike_krivdiuk|2013/08/01 07:58:15|&lt;slittingPlanNS:slittingPlan&gt;
+mike_krivdiuk|2013/08/01 07:58:26|должно быть &lt;slittingPlanNS&gt;
+mike_krivdiuk|2013/08/01 07:58:49|вторая строка (открывающий тэг)
+iabbliz|2013/08/01 07:59:15|да, валидацию прошла
+mike_krivdiuk|2013/08/01 07:59:22|ОК
+iabbliz|2013/08/01 08:28:20|New COMObject(&quot;Msxml2.DOMDocument.6.0&quot;);
+iabbliz|2013/08/01 08:28:40|SchemaCache = New COMObject(&quot;Msxml2.XMLSchemaCache.6.0&quot;);
+iabbliz|2013/08/01 08:30:11|инет отвалился
+iabbliz|2013/08/01 08:32:26|опять инет
+iabbliz|2013/08/01 08:33:15|ок
+mike_krivdiuk|2013/08/01 08:35:56|странно, но на сайте (<a href="http://www.freeformatter.com/xml-validator-xsd.html">http://www.freeformatter.com/xml-validator-xsd.html</a>) у меня проходит валидация XML&apos;ника с этим доп. текстом в первом тэге:
+&lt;slittingPlanNS:slittingPlan xmlns:slittingPlanNS=&quot;<a href="http://www.biaxplen.ru/ERP-SLOS">http://www.biaxplen.ru/ERP-SLOS</a>&quot; xmlns:xsi=&quot;<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>&quot;&gt;
+mike_krivdiuk|2013/08/01 08:36:27|что за ошибка у тебя возникает, когда есть этот текст?
+iabbliz|2013/08/01 08:36:40|можешь скинуть файл на котором проверял, еще раз проверю
+mike_krivdiuk|2013/08/01 08:36:55|<files alt="отправил (-а) файл &quot;SampleRun0001.xml&quot;">
+<file size="25839" index="0">SampleRun0001.xml</file></files>
+iabbliz|2013/08/01 08:39:18|ошибку валидация все равно выдает, 
+Error: Элемент &apos;&apos;{http://www.biaxplen.ru/ERP-SLOS}slittingPlan&apos;&apos; используется, но не был объявлен в DTD и схеме.
+ &lt;slittingPlanNS:slittingPlan xmlns:slittingPlanNS=&quot;<a href="http://www.biaxplen.ru/ERP-SLOS">http://www.biaxplen.ru/ERP-SLOS</a>&quot; xmlns:xsi=&quot;<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>&quot;&gt;
+iabbliz|2013/08/01 08:39:24|попробовал загрузить без проверки
+iabbliz|2013/08/01 08:39:29|загрузилось
+mike_krivdiuk|2013/08/01 08:41:10|погугли на предмет этой ошибки, плиз
+mike_krivdiuk|2013/08/01 08:42:07|точку или запятую?
+mike_krivdiuk|2013/08/01 08:42:59|или это от настроек сервера зависит (локаль пользователя из системы берется и из нее разделитель дробных чисел)?
+iabbliz|2013/08/01 08:47:54|сек
+mike_krivdiuk|2013/08/01 08:48:33|вроде в XML всегда точка для разделителя целой и дробной части используется...
+iabbliz|2013/08/01 08:52:51|запятая
+iabbliz|2013/08/01 08:52:58|ща еще раз проверю
+iabbliz|2013/08/01 08:55:11|ага, но должна быть точка...
+iabbliz|2013/08/01 08:56:47|сейчас поправлю
+mike_krivdiuk|2013/08/01 09:02:05|ок
+mike_krivdiuk|2013/08/01 09:24:43|Антон, попробуй этот файл с валидацией загрузить
+mike_krivdiuk|2013/08/01 09:25:00|в пред. версии не была указана схема
+mike_krivdiuk|2013/08/01 09:25:09|(во второй строке)
+iabbliz|2013/08/01 09:32:38|все равно, та же ошибка.
+mike_krivdiuk|2013/08/01 09:59:11|странно... а что гугл?
+iabbliz|2013/08/01 10:27:03|врятли что подскажет=)
+iabbliz|2013/08/01 10:27:07|поищу еще..
+iabbliz|2013/08/01 10:27:12|попозже
+iabbliz|2013/08/02 06:41:55|Привет
+mike_krivdiuk|2013/08/02 06:42:15|мне доступ дали к тестовой базе, хочу выгрузку посмотреть (а потом загрузку)...
+mike_krivdiuk|2013/08/02 06:42:34|подскажи, куда тыкнуть, чтобы найти документы выгрузки в СОР?
+iabbliz|2013/08/02 06:43:23|в 1с зашли?
+iabbliz|2013/08/02 06:44:13|а по какому адресу вы подключились к терминалу?
+iabbliz|2013/08/02 07:03:35|ок=)
+mike_krivdiuk|2013/08/02 07:03:57|база для процессного тестирования (в заголовке приложения вижу)
+mike_krivdiuk|2013/08/02 07:04:28|в главом меню есть большая кнопка БИАКСПЛЕН
+mike_krivdiuk|2013/08/02 07:04:39|вроде все там посмотрел, но не нашел
+mike_krivdiuk|2013/08/02 07:05:02|может прав не дали нужных?
+iabbliz|2013/08/02 07:05:16|сек, узнаю есть ли там последние изменения
+iabbliz|2013/08/02 07:05:20|по точке которую правил вчера
+iabbliz|2013/08/02 07:08:04|чтобы зайти в документ Выгрузка в СОР
+iabbliz|2013/08/02 07:08:11|Операции - Документы
+iabbliz|2013/08/02 07:08:16|Выгрукза В СОР
+iabbliz|2013/08/02 07:09:19|что касается самого документа и выгрзуки тут я могу подсказать.
+а вот есть ли в твоей базе все необходимые данные (созданы Заказы Покупателей и т.п.) и как они должны быть заполнены тут уже не подскажу
+iabbliz|2013/08/02 07:28:05|хорошо
+mike_krivdiuk|2013/08/02 07:28:06|похоже, были ошибки валидации:Сформирован файл: <a href="\\10.111.174.9\ftp\XTrim\BM\orders_000000003_02082013.xml">\\10.111.174.9\ftp\XTrim\BM\orders_000000003_02082013.xml</a>
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&quot; неполно.
+Требуется: expectedDespatchDate.
+  &lt;/order&gt;
+Error: Ошибка разбора &apos;&apos;12192.48&apos;&apos; как типа данных integer.
+Не удалось проанализировать элемент &quot;Length&quot; со значением &quot;12192.48&quot;.
+   &lt;Length&gt;12192.48&lt;/Length&gt;
+Error: Согласно DTD и схеме, содержимое элемента &quot;order&amp;quot..
+iabbliz|2013/08/02 07:29:33|ругается на Lenght так тип данных в xsd
+iabbliz|2013/08/02 07:29:37|Integer*
+mike_krivdiuk|2013/08/02 07:30:01|ну, а почему выгружается double?
+mike_krivdiuk|2013/08/02 07:30:13|надо округлять, видимо...
+iabbliz|2013/08/02 07:30:19|надо округлять?
+iabbliz|2013/08/02 07:30:46|вниз вверх? или обычно
+mike_krivdiuk|2013/08/02 07:31:10|как обычно, ИМХО
+iabbliz|2013/08/02 07:33:41|ок
+mike_krivdiuk|2013/08/02 07:35:02|а откуда берется тэг &lt;DocumentNumber&gt;?
+mike_krivdiuk|2013/08/02 07:35:14|вроде как в XSD его нет
+iabbliz|2013/08/02 07:35:59|это НомерЗаказаНаПроизводство
+iabbliz|2013/08/02 07:36:14|это про файл заказов?
+mike_krivdiuk|2013/08/02 07:36:21|да, orders.xsd
+mike_krivdiuk|2013/08/02 07:37:13|а чему по XSD этот НомерЗаказаНаПроизводство должен соответствовать, что-то не пойму?
+iabbliz|2013/08/02 07:37:25|сек смотрю
+iabbliz|2013/08/02 07:38:21|&quot;Антон,
+ Странно, что в последней версии XSD нет атрибута documentNumber. Атрибут должен быть. Где-то он по ошибке потерялся. <ss type="sad">:(</ss>
+
+ Это единственное отличие, кроме тех, что описаны были в моем последнем письме Самиру, по сравнению с предыдущей версией orders.xsd?
+
+ Спасибо!&quot;
+iabbliz|2013/08/02 07:39:43|хм что не пойму по этому реквизиту
+iabbliz|2013/08/02 07:40:02|помню что исправлял, а смотрю в xsd последней нет его
+iabbliz|2013/08/02 07:42:14|а в базе прописана с этим тегом xsd
+iabbliz|2013/08/02 07:43:02|т.е. в базе есть и этот реквизит (documentNumber) и реквизит FilmDensity который последним добавляли
+iabbliz|2013/08/02 07:43:08|в схеме xsd
+iabbliz|2013/08/02 07:46:47|по поводу точки в числах. все таки я еще раньше это сделал...
+iabbliz|2013/08/02 07:47:06|т.е. у тебя в базе должно с точкой выгружаться
+mike_krivdiuk|2013/08/02 07:47:29|потому что старая версия?
+iabbliz|2013/08/02 07:47:42|эм? еще раз
+iabbliz|2013/08/02 07:47:48|старая версия какая?
+iabbliz|2013/08/02 07:47:52|ты про что
+mike_krivdiuk|2013/08/02 07:50:47|а ты про что? про вчерашнее исправление с точкой?
+mike_krivdiuk|2013/08/02 07:51:07|т.е. эта версия уже установлена на сервере в БМ?
+mike_krivdiuk|2013/08/02 07:51:22|или там более старая версия?
+iabbliz|2013/08/02 07:52:06|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x50dc66c2d53e53f78ed435726346e87456ac520020f9dc773a28e056656a9c14" timestamp="1375429847"><legacyquote>[11:50:47] Mike Krivdyuk: </legacyquote>а ты про что? про вчерашнее исправление с точкой?
+т.е. эта версия уже установлена на сервере в БМ?<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>имею ввиду те изменения которые я внес вчера думая что там с запятой выгружается, были не верны. Т.е. они сразу выгружались с точкой. 
+В твоей базе все нормально.
+mike_krivdiuk|2013/08/02 07:53:31|т.е. это я на старый файл какой-то смотрел... сгенеренный до твоих изменений, получается...
+iabbliz|2013/08/02 07:53:57|даже не знаю, ну сейчас в файле для тега Lenght что стоит?
+iabbliz|2013/08/02 07:54:01|точка или запятая
+iabbliz|2013/08/02 07:54:04|в выгруженном
+mike_krivdiuk|2013/08/02 07:54:29|точка была
+iabbliz|2013/08/02 07:54:33|ну значит все ок
+iabbliz|2013/08/02 07:54:50|что за файл был у тебя, непонятно возможно еще до валидации
+mike_krivdiuk|2013/08/02 07:54:53|но вчера речь шла про другие тэги (которые double)
+iabbliz|2013/08/02 07:55:06|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x814b3deedf115d21cb4e63a129aedf021b1fee7e038e057a64e77bb8a3ba3618" timestamp="1375430093"><legacyquote>[11:54:53] Mike Krivdyuk: </legacyquote>но вчера речь шла про другие тэги (которые double)<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>там единообразно отрабатывает
+mike_krivdiuk|2013/08/02 07:55:08|это вес, димаметр кажется
+mike_krivdiuk|2013/08/02 07:55:16|ОК
+iabbliz|2013/08/02 07:55:17|т.е. для них точно также будет
+iabbliz|2013/08/02 08:05:35|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="xc852597bf2548bf796c52b0054ece45e10dd2eb6e8e23babcbdd7ae7b771c0dc" timestamp="1375428613"><legacyquote>[11:30:13] Mike Krivdyuk: </legacyquote>надо округлять, видимо...<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>поправил в базе, надо перезайти в 1с
+iabbliz|2013/08/02 08:05:40|у вас
+iabbliz|2013/08/02 08:05:43|у тебя=)
+mike_krivdiuk|2013/08/02 08:06:05|ок, сенкс
+iabbliz|2013/08/02 08:16:27|сек
+iabbliz|2013/08/02 08:17:39|в ТЧ документа для этого заказа ДатаГотовностиПДО проставлена?
+iabbliz|2013/08/02 08:17:56|в документ Выгрузка в СОР всмысле
+iabbliz|2013/08/02 08:19:11|это 3  колонка
+iabbliz|2013/08/02 08:19:27|она заполняется из документа Заказ покупателя
+mike_krivdiuk|2013/08/02 08:19:48|нет, у этих заказов - пустая
+iabbliz|2013/08/02 08:20:09|<quote author="iabbliz" authorname="Антон Иванов" conversation="mike_krivdiuk" guid="xedf97e12ec20011866d2ffff7a0a08ded0adb084a3e6c571c5273adb19444433" timestamp="1375431567"><legacyquote>[12:19:27] Антон Иванов: </legacyquote>она заполняется из документа Заказ покупателя<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>на закладке Специальное реквизит Дата готовности ПДО
+iabbliz|2013/08/02 08:20:25|т.е. можно зайти в эти Заказы и проставить дату готовности ПДО
+iabbliz|2013/08/02 08:20:46|перезаполнить Выгрузку В СОр и посмотреть заполниться ли Дата готовности
+mike_krivdiuk|2013/08/02 08:21:12|понял... а разве по бизнесу она не должна быть заполнена?
+mike_krivdiuk|2013/08/02 08:21:44|возможно тут проблема в том, что заказы были импортированы из Интеллекта, поэтому есть косяки
+iabbliz|2013/08/02 08:21:57|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x6c2893cf8c24f398f7ae56e3655b53aff06992b62fd19f5e8c22d8f8c70cd569" timestamp="1375431672"><legacyquote>[12:21:12] Mike Krivdyuk: </legacyquote>понял... а разве по бизнесу она не должна быть заполнена?<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>на этот вопрос мне сложно ответить
+mike_krivdiuk|2013/08/02 08:22:12|но, в моем понимании, если заказ вставлен в блок, то и даты у него должны быть заполнены
+mike_krivdiuk|2013/08/02 08:22:25|это к Кате, видимо, вопрос
+iabbliz|2013/08/02 08:22:45|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x38da54e634336a8633038a4874de5e7b78ca4dea1d5eb239e3600a1f699b6de6" timestamp="1375431745"><legacyquote>[12:22:25] Mike Krivdyuk: </legacyquote>это к Кате, видимо, вопрос<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>да лучше к ней, т.к. могу тебя попутать
+iabbliz|2013/08/02 08:32:33|можешь файл скинуть?
+iabbliz|2013/08/02 08:32:39|который выгрузился
+mike_krivdiuk|2013/08/02 08:32:59|<files alt="отправил (-а) файл &quot;orders_000000003_02082013.xml&quot;">
+<file size="16819" index="0">orders_000000003_02082013.xml</file></files>
+mike_krivdiuk|2013/08/02 08:33:19|<files alt="отправил (-а) файл &quot;stock_000000003_02082013.xml&quot;">
+<file size="1443" index="0">stock_000000003_02082013.xml</file></files>
+mike_krivdiuk|2013/08/02 08:33:31|и сток лови - есть ошибки валидации
+iabbliz|2013/08/02 08:33:54|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x808a0ada2b433ee4a1eff56c4c0f158132530f19639d9602f9017fde2219237d" timestamp="1375432411"><legacyquote>[12:33:31] Mike Krivdyuk: </legacyquote>есть ошибки валидации<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>какие?
+iabbliz|2013/08/02 08:34:35|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x89b28066e999bf404a30fb7d2ac5b8f6f3aa8081241075988c076e7d634f1db7" timestamp="1375432225"><legacyquote>[12:30:25] Mike Krivdyuk: </legacyquote>еще вопрос - откуда, при выбранных двух заказах в 1С, берутся в XML с этим номером заказа несколько записей? Отличаются номером документа (НомерЗаказаНаПроизводство)?<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>а номера заказов можешь сказать?
+mike_krivdiuk|2013/08/02 08:36:37|в 1С?
+iabbliz|2013/08/02 08:36:50|увидел
+mike_krivdiuk|2013/08/02 08:37:15|Заказ покупателя 18/1301282 от 18.04.2000 0:00:00
+и
+Заказ покупателя 18/1301283 от 18.04.2000 0:00:00
+mike_krivdiuk|2013/08/02 08:38:43|ошибки в stock.xml:
+cvc-complex-type.2.4.a: Invalid content was found starting with element &apos;ReelWidth&apos;. One of &apos;{Core}&apos; is expected. stock_000000003_02082013_1.xml /SLOS_ERP Interface/src line 9 XML Problem
+
+cvc-type.3.1.3: The value &apos;17990.01&apos; of element &apos;ReelLength&apos; is not valid. stock_000000003_02082013_1.xml /SLOS_ERP Interface/src line 30 XML Problem
+
+cvc-datatype-valid.1.2.1: &apos;17990.01&apos; is not a valid value for &apos;integer&apos;. stock_000000003_02082013_1.xml /SLOS_ERP Interface/src line 30 XML Problem
+
+cvc-complex-type.2.4.a: Invalid content was found starting with element &apos;ReelWidth&apos;. One of &apos;{Core}&apos; is expected. stock_000000003_02082013_1.xml /SLOS_ERP Interface/src line 28 XML Problem
+
+cvc-type.3.1.3: The value &apos;33589.4&apos; of element &apos;ReelLength&apos; is not valid. stock_000000003_02082013_1.xml /SLOS_ERP Interface/src line 18 XML Problem
+
+cvc-datatype-valid.1.2.1: &apos;33589.4&apos; is not a valid value for &apos;integer&apos;. stock_000000003_02082013_1.xml /SLOS_ERP Interface/src line 18 XML Problem
+iabbliz|2013/08/02 08:40:27|на неделю
+mike_krivdiuk|2013/08/02 08:40:34|понял
+iabbliz|2013/08/02 08:40:55|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x89b28066e999bf404a30fb7d2ac5b8f6f3aa8081241075988c076e7d634f1db7" timestamp="1375432225"><legacyquote>[12:30:25] Mike Krivdyuk: </legacyquote>еще вопрос - откуда, при выбранных двух заказах в 1С, берутся в XML с этим номером заказа несколько записей? Отличаются номером документа (НомерЗаказаНаПроизводство)?<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>задал вопрос Самиру, сейчас скажет как обработать эту ситуацию
+iabbliz|2013/08/02 08:42:21|получается что один заказ покупателя
+iabbliz|2013/08/02 08:43:00|отмечен в нескольких заказах на производстве
+iabbliz|2013/08/02 08:45:29|Самир сказал что стоит в намеченном кодировании, чтобы была возможность указать ЗаказНаПроизводство перед выгрузкой
+iabbliz|2013/08/02 08:45:56|и ситуация что один заказ покупателя отмечен в нескольких заказах на производство в 1с, это нормальная ситуация.
+iabbliz|2013/08/02 08:50:45|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x4624ef7af9061e47bf68d3a8fe94829e5026cf59f15882c8da553db97b3d8c92" timestamp="1375433356"><legacyquote>[12:49:16] Mike Krivdyuk: </legacyquote>так где выбирать надо будет конкретный номер заказа на производство? в какой момент, я не понял?<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>если правильно понял Самира, то будет в ТЧ несколько строк заказов покупателей, и будет добавлена колонка ЗаказНаПроизводство
+mike_krivdiuk|2013/08/02 08:51:05|понял
+mike_krivdiuk|2013/08/02 08:53:52|а это когда планируется исправлять?
+mike_krivdiuk|2013/08/02 08:54:00|что Самир говорит?
+iabbliz|2013/08/02 08:56:19|<quote author="samirbektairov" authorname="Samir Tairov" conversation="samirbektairov" guid="x1a02b537cb356260b1c3eea86e4e5e85642fca5dbc5a42860b6407f7857522aa" timestamp="1375433752"><legacyquote>[12:55:52] Samir Tairov: </legacyquote>во вторник Выдадим дополнение к ТП. а в пятницу сам код<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>
+iabbliz|2013/08/02 08:59:02|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x76057d81501b37ec8f980b75c9edea0e6e5fb4cf8f8e26114eae5d9657699531" timestamp="1375432723"><legacyquote>[12:38:43] Mike Krivdyuk: </legacyquote>ReelLength<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>округлять?
+iabbliz|2013/08/02 09:02:23|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x76057d81501b37ec8f980b75c9edea0e6e5fb4cf8f8e26114eae5d9657699531" timestamp="1375432723"><legacyquote>[12:38:43] Mike Krivdyuk: </legacyquote>cvc-complex-type.2.4.a: Invalid content was found starting with element &apos;ReelWidth&apos;. One of &apos;{Core}&apos; is expected. stock_000000003_02082013_1.xml /SLOS_ERP Interface/src line 9 XML Problem<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>что касается этой ошибки, то необходимо проставить в выгружаемых рулонах ДиаметрШпули
+iabbliz|2013/08/02 09:02:33|но перед этим необходимо обновить базу твою
+iabbliz|2013/08/02 09:02:49|т.к. там изменения прошли по ДиаметруШпули...
+mike_krivdiuk|2013/08/02 09:05:41|а это не обязательный атрибут рулона в 1С?
+mike_krivdiuk|2013/08/02 09:06:06|как рулон может хранится без шпули? он же на что-то намотан... <ss type="smile">:)</ss>
+iabbliz|2013/08/02 09:06:34|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x1f1ea27b8ac7149473aba14ab6ff13f1fa88971c246b14ed7e3530542e09719b" timestamp="1375434341"><legacyquote>[13:05:41] Mike Krivdyuk: </legacyquote>а это не обязательный атрибут рулона в 1С?<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>база тестовая, отсюда и такие вещи=)
+iabbliz|2013/08/02 09:06:57|сек сейчас перенесу измеенния по диаметру шпул
+mike_krivdiuk|2013/08/02 09:10:00|ну, на уровне БД признак обязательности для контроля таких вещей ставится, тогда и не будет бардака в базе (тестовая или не тестовая, не важно)...
+iabbliz|2013/08/02 09:10:22|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x1dc0fa4d45f5ff28354efee19184615b876b3ce46f2106f66a3d19d43a524d07" timestamp="1375434600"><legacyquote>[13:10:00] Mike Krivdyuk: </legacyquote>ну, на уровне БД признак обязательности для контроля таких вещей ставится, тогда и не будет бардака в базе (тестовая или не тестовая, не важн<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>да ставиться, но если объект уже создан
+iabbliz|2013/08/02 09:10:26|таблица всмысле
+iabbliz|2013/08/02 09:10:28|и забили туда данные
+mike_krivdiuk|2013/08/02 09:10:35|базу, видимо не ты проектировал, так что это к Самиру вопрос
+iabbliz|2013/08/02 09:10:36|потом уже внесли доп. измеенния
+iabbliz|2013/08/02 09:10:46|поэтому в тех записях что есть
+iabbliz|2013/08/02 09:10:50|не проставлено
+mike_krivdiuk|2013/08/02 09:11:09|ясно
+iabbliz|2013/08/02 09:11:17|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="xeec578e99b539e7c3b741dd291cea36e0e10ab34f62b0b476da580b184082789" timestamp="1375434635"><legacyquote>[13:10:35] Mike Krivdyuk: </legacyquote>базу, видимо не ты проектировал, так что это к Самиру вопрос<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>угу к нему
+iabbliz|2013/08/02 09:12:29|<quote author="iabbliz" authorname="Антон Иванов" conversation="mike_krivdiuk" guid="x3f7c437cbbc7c75e2ad7d38f5976ea18a1460601f845f01786a6a2f1dff85679" timestamp="1375433942"><legacyquote>[12:59:02] Антон Иванов: </legacyquote>[12:38] БПЛ: Кривдюк Михаил: 
+
+&lt;&lt;&lt; ReelLength<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>округляем?
+mike_krivdiuk|2013/08/02 09:13:37|ну, так integer жеж, в метрах... т.е. округляем до целого
+iabbliz|2013/08/02 09:16:15|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x1a99d8b96f72a98310e96a93f452f3635cd8bc728b85596d1b01d3819f47afdd" timestamp="1375434817"><legacyquote>[13:13:37] Mike Krivdyuk: </legacyquote>ну, так integer жеж, в метрах... т.е. округляем до целого<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>ок
+mike_krivdiuk|2013/08/02 09:18:26|а с ProductType что? тоже не заполнен... он же тоже обязательный, и должен быть заполнен.
+mike_krivdiuk|2013/08/02 09:19:26|Для рулонов со склада - это SRS вроде как... а если из ГП в перерезку приходит, то FP должен быть
+iabbliz|2013/08/02 09:19:42|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x3cf593a7535c08e1c0fb037d3c3c72fb6da16707f8335d9c308b8e0a94265567" timestamp="1375435106"><legacyquote>[13:18:26] Mike Krivdyuk: </legacyquote>ProductType<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>берется из свойства характеристики номенклатуры...
+iabbliz|2013/08/02 09:21:03|свойство называется 4ГП/ПФ
+iabbliz|2013/08/02 09:33:33|можешь выйти из 1с на 5 мин?
+mike_krivdiuk|2013/08/02 09:36:29|вышел
+iabbliz|2013/08/02 09:40:49|можно заходить
+mike_krivdiuk|2013/08/02 09:53:29|<files alt="отправил (-а) файл &quot;ТП № ИН-01-v0.4 (ревью_КривдюкМЮ_10.06.2013).docx&quot;">
+<file size="162602" index="0">ТП № ИН-01-v0.4 (ревью_КривдюкМЮ_10.06.2013).docx</file></files>
+iabbliz|2013/08/02 10:00:25|
+iabbliz|2013/08/14 08:20:07|Привет
+iabbliz|2013/08/14 08:20:08|Да
+iabbliz|2013/08/14 12:16:53|Привет, еще раз
+iabbliz|2013/08/14 12:17:11|Ты тестируешь в базе, где в заголовке написано &quot;База процессного тестирования&quot;
+iabbliz|2013/08/14 12:17:13|?
+iabbliz|2013/08/14 12:18:31|ага, но это наверно будет чуток попозже, раз ты там сидишь. Тогда пока залью конфу на ФТП
+iabbliz|2013/08/14 12:18:34|скажу когда выйти
+iabbliz|2013/08/14 13:15:25|Можешь выйти? из базы
+iabbliz|2013/08/14 13:15:56|В нее будет залита база с Данными, твои изменения сохраню, но в этой базе их не будет.
+iabbliz|2013/08/14 13:24:50|спс
+iabbliz|2013/08/14 13:51:19|Все, можно заходить
+mike_krivdiuk|2013/08/14 13:52:04|ok, спс
+mike_krivdiuk|2013/08/14 13:52:22|<ss type="smile">:)</ss>
+mike_krivdiuk|2013/08/14 13:52:38|грит, идентификация пользователя не выполнена...
+mike_krivdiuk|2013/08/14 13:52:53|неправильные имя или пароль
+mike_krivdiuk|2013/08/14 13:53:06|меня видимо надо в эту базу добавить...
+iabbliz|2013/08/14 13:53:09|ага
+mike_krivdiuk|2013/08/14 13:53:13|у тебя нет прав?
+iabbliz|2013/08/14 13:53:16|есть
+mike_krivdiuk|2013/08/14 13:53:19|ок
+mike_krivdiuk|2013/08/14 13:53:45|Кривдюк Михаил Юрьевич [МФ]
+iabbliz|2013/08/14 13:54:44|пароль
+123
+iabbliz|2013/08/14 13:54:47|пробуй
+iabbliz|2013/08/14 14:01:36|Странно
+mike_krivdiuk|2013/08/14 14:01:40|да, странно
+mike_krivdiuk|2013/08/14 14:02:12|они в какой момент создавались? не вручную же, вроде была обработка какая-то
+mike_krivdiuk|2013/08/14 14:02:21|можешь код глянуть?
+mike_krivdiuk|2013/08/14 14:02:30|или это к Самиру?
+iabbliz|2013/08/14 14:02:51|Сейчас узнаю кто базу делал
+mike_krivdiuk|2013/08/14 14:05:26|и все пустые
+mike_krivdiuk|2013/08/14 14:07:25|... блин, но там свойства Шпуля нет <ss type="smile">:)</ss>
+iabbliz|2013/08/14 14:08:30|Шпулю же перенесли в отдельный справочник, поидее из свойства она ушла
+iabbliz|2013/08/14 14:08:40|лучше это уточнить у Самира
+iabbliz|2013/08/14 14:10:13|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x46d6ed24646ed9cfe53ea6e7346a81385137bbc3b980c624b62e8b5fa6126827" timestamp="1376488877"><legacyquote>[18:01:17] Mike Krivdyuk: </legacyquote>т.е. есть скажем Характеристика с названием &quot;880, 152, Корона внешняя, ГП, Да&quot;, а внутри свойства не заполнены (ширина пустая, шпуля пустая и т.д.)<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>а для какой номенклатуры это?
+mike_krivdiuk|2013/08/14 14:10:24|880, ...
+mike_krivdiuk|2013/08/14 14:10:45|а в названии тогда не должна шпуля фигурировать?
+mike_krivdiuk|2013/08/14 14:11:18|а то получается название - 880, 152, Корона внешняя, ГП, Да
+а внутри шпули нет
+iabbliz|2013/08/14 14:11:28|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x64bea635bbc4072f1be01a99ce3882d48743db901fc622552a19187bf973b4d9" timestamp="1376489445"><legacyquote>[18:10:45] Mike Krivdyuk: </legacyquote>а в названии тогда не должна шпуля фигурировать?<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>да не должна
+mike_krivdiuk|2013/08/14 14:11:37|тогда правильно было бы именовать 880, Корона внешняя, ГП, Да
+iabbliz|2013/08/14 14:17:35|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="xab3b186198429976e2edc4bfe20fd98e08055908b9497d712b3a85e984be243b" timestamp="1376489497"><legacyquote>[18:11:37] Mike Krivdyuk: </legacyquote>тогда правильно было бы именовать 880, Корона внешняя, ГП, Да
+ну, в соответствии со значениями свойств<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>она так и формируется если в интерактивном режиме пользователь указывает свойства
+iabbliz|2013/08/14 14:20:39|по поводу пустых значений свойств, лучше у Самира спросить. Откуда такие
+mike_krivdiuk|2013/08/14 14:21:40|ок
+iabbliz|2013/08/16 07:47:51|Привет, Михаил
+mike_krivdiuk|2013/08/16 07:49:56|пытаюсь загрузить решение из СОР и получаю сообщение:
+mike_krivdiuk|2013/08/16 07:50:09|<files alt="отправил (-а) файл &quot;import_solution_error.png&quot;">
+<file size="4724" index="0">import_solution_error.png</file></files>
+mike_krivdiuk|2013/08/16 07:50:30|что бы это значило?
+iabbliz|2013/08/16 07:51:17|смотрю
+iabbliz|2013/08/16 07:55:09|а можешь на подробно нажать и скинуть текст оттуда?
+mike_krivdiuk|2013/08/16 07:56:07|{Документ.рздЗагрузкаЗаданийНаРаскрой.МодульОбъекта(344)}: Значение не является значением объектного типа (пНомерЗаказаПокупателя)
+      СтрокаТЗПолученныеРулоны.customerOrder=МассивЗаказовПокупателей[0].пНомерЗаказаПокупателя;
+mike_krivdiuk|2013/08/16 07:56:41|не может получить список заказов покупателей из карты раскроя вторичной резки, вроде бы...
+mike_krivdiuk|2013/08/16 07:56:49|но тебе, глядя на код, виднее
+iabbliz|2013/08/16 07:58:05|можешь перезайти и еще раз попробовать?
+iabbliz|2013/08/16 07:58:18|перезайти в 1с, всмысле
+mike_krivdiuk|2013/08/16 08:03:08|ур-ра заррработало!!!
+(с) Кот Матроскин
+iabbliz|2013/08/16 08:03:29|отлично=)
+iabbliz|2013/08/16 08:03:36|<ss type="laugh">:D</ss>
+mike_krivdiuk|2013/08/16 08:03:40|вот лог:Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Создана характеристика номенклатуры со свойствами  Стороне активации: Корона внешняя ГППФ: ПФ ШиринаРулона: 1 310 для номенклатуры: HGPL 20
+Создана характеристика номенклатуры со свойствами  Стороне активации: Корона внешняя ГППФ: ПФ ШиринаРулона: 1 350 для номенклатуры: HGPL 20
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Создана характеристика номенклатуры со свойствами  Стороне активации: Корона внешняя ГППФ: ПФ ШиринаРулона: 1 345 для номенклатуры: HGPL 20
+Создана характеристика номенклатуры со свойствами  Стороне активации: Корона внешняя ГППФ: ПФ ШиринаРулона: 1 285 для номенклатуры: HGPL 20
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Создана характеристика номенклатуры со свойствами  Стороне активации: Корона внешняя ГППФ: ПФ ШиринаРулона: 1 325 для номенклатуры: HGPL 20
+Создана характеристика номенклатуры со свойствами  Стороне активации: Корона внешняя ГППФ: ПФ ШиринаРулона: 1 335 для номенклатуры: HGPL 20
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР
+Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках
+Создана характеристика номенклатуры со свойствами  Стороне активации: Корона внешняя ГППФ: ПФ ШиринаРулона: 1 130 для номенклатуры: HGPL 20
+Создана характеристика номенклатуры со свойствами  Стороне активации: Корона внешняя ГППФ: ПФ ШиринаРулона: 1 120 для номенклатуры: HGPL 20
+Ошибка! Не указано значение элемента &quot;Свойство..
+iabbliz|2013/08/16 08:04:09|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x2bcc34297891b7604f15a4fedd0322846d65cd3ad524c3b410c6b9505d7611d3" timestamp="1376640220"><legacyquote>[12:03:40] Mike Krivdyuk: </legacyquote>Ошибка! Не найдено соотвествие для Оборудование ОбъектСОР: Bimec STB 60.2  в РС: рздСоотвествиеОбъектов1сИОбъектовСОР<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>это надо прописать
+iabbliz|2013/08/16 08:05:04|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x3c9adc49b9a3e41436c255be160359372f9e9b7b6305ba128d739373072f293c" timestamp="1376640280"><legacyquote>[12:04:40] Mike Krivdyuk: </legacyquote>а вот про &quot;Ошибка! Не указано значение элемента &quot;Свойство_ДиаметрШпули&quot;, в спец. настройках&quot; скажи?<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>ща найдем, она лишняя
+iabbliz|2013/08/16 08:05:10|всмысле сообщение лишнее
+iabbliz|2013/08/16 08:19:21|Поправил, надо перезайти в 1с.
+mike_krivdiuk|2013/08/16 08:34:18|правда, Подразделение и Площадка так и не заполняются в загруженной карте раскроя <ss type="sad">:(</ss>
+iabbliz|2013/08/16 08:35:53|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x7d2b2669462eb90d55cabd56c2df4ee5833e04a33a8803f85050a771f7e38498" timestamp="1376642058"><legacyquote>[12:34:18] Mike Krivdyuk: </legacyquote>правда, Подразделение и Площадка так и не заполняются в загруженной карте раскроя <ss type="sad">:(</ss><legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>Необходимо в оборудовании проставить подразделение
+iabbliz|2013/08/16 08:36:06|тогда заполнится и Подразделение и Площадка
+iabbliz|2013/08/16 08:36:48|<quote author="iabbliz" authorname="Антон Иванов" conversation="mike_krivdiuk" guid="x865c444ff04f9fb374671d7ea42b97a62d4010be2102e42580b879328a828971" timestamp="1376642166"><legacyquote>[12:36:06] Антон Иванов: </legacyquote>тогда заполнится и Подразделение и Площадка<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>конечно если и в Подразделении заполнена Площадка
+iabbliz|2013/08/16 08:37:11|т.е. там порядок такой, что из Оборудование берется Подразделение
+а из Подразделения берется площадка
+mike_krivdiuk|2013/08/16 08:40:24|так вроде Подразделение не может быть не привязано в Площадке (оно ему подчиняется)... или может? <ss type="smile">:)</ss>
+iabbliz|2013/08/16 08:42:53|По моему может
+iabbliz|2013/08/26 11:09:05|Привет, Михаил
+mike_krivdiuk|2013/08/26 11:09:20|Привет, Антон!
+iabbliz|2013/08/26 11:09:46|Хотел пораспрашивать тебя по поводу замечаний по протоколу
+mike_krivdiuk|2013/08/26 11:10:10|давай, порасспрашивай...
+mike_krivdiuk|2013/08/26 11:10:12|<ss type="smile">:)</ss>
+iabbliz|2013/08/26 11:10:21|ты на каком документе тестировал?
+iabbliz|2013/08/26 11:10:27|всмысле номер не помнишь?
+iabbliz|2013/08/26 11:11:08|&quot;Система должна отображать в ТЧ Остатки только рулоны, документы по которым проведены в системе.
+Сейчас в результаты выгрузки попадают все рулоны по выбранной площадке, находящиеся на складах. По факту, документ может быть только создан и не содержать всех необходимых данных. Отсюда вылезают ошибки при выгрузке таких рулонов в СОР.
+В ТЧ не должны попадать остатки продукции, где Рулон/Паллет = пусто
+&quot;
+iabbliz|2013/08/26 11:22:12|&quot;BAD&quot;
+iabbliz|2013/08/26 11:25:29|
+mike_krivdiuk|2013/08/26 11:32:01|&quot;Во второй карте раскроя (второе задание на первичную резку) некорректно загружаются характеристики исходного рулона: &quot;&quot;1050,152,Корона внешняя,ГП,Да&quot;&quot;
+Т.к. исходный рулон для задания - маточный рулон, то должна быть привязана только характеристика со стороной активации (Корона внешняя).&quot;
+iabbliz|2013/08/26 11:37:18|sorceRollWidth
+iabbliz|2013/08/26 11:37:22|по этому тегу
+iabbliz|2013/08/26 11:38:20|Если ШиринаРулона &gt; 5000 Тогда
+iabbliz|2013/08/26 11:57:42|[15:51:10] Антон Иванов: Михаил Кривдюк попросил спросить два вопроса:
+ИН-01 
+1) Если при заполнении ТЧ: Остатков, документ выгрузка в СОР, качество не будет заполнено, такой случай может быть?
+[15:51:36] Раздолье.Смирнова Екатерина: нет
+[15:51:58] Антон Иванов: 2) Документ.ВыгрузкаВСОР реквизит Склад, при заполнении остатков отбора по складу сейчас нет, должен ли он быть?
+[15:52:35] Антон Иванов: т.е. на форме он есть, а при заполнении ТЧ: Остатки не участвует
+[15:54:20] Раздолье.Смирнова Екатерина: должен. если склад не указан, то остатки брать по всем скаладам привязанным к площадке
+mike_krivdiuk|2013/08/26 11:59:21|ОК, тогда по 28 считаем, что была проблема тестовых данных и в ПРОДе таких проблем не вылезет...
+iabbliz|2013/08/26 12:02:31|могу я попробовать в этой базе повторно загрузить из файла?
+mike_krivdiuk|2013/08/26 12:04:26|да, а что мешает?
+iabbliz|2013/08/26 12:04:39|просто создадутся новые документы
+iabbliz|2013/08/26 12:04:41|в базе
+mike_krivdiuk|2013/08/26 12:05:01|пока никаких планов (сменно-суточных заданий) по моей загрузке не создавалось.
+iabbliz|2013/08/26 12:05:03|визуально в коде не вижу ошибки
+mike_krivdiuk|2013/08/26 12:05:19|потом можешь свою загрузку удалить, когда проверишь, как работает...
+iabbliz|2013/08/26 12:05:37|ок
+mike_krivdiuk|2013/08/26 12:05:51|еще по 21 надо пообщаться - он в статусе Отклонено стоит.
+mike_krivdiuk|2013/08/26 12:05:59|как с этим закончишь, дай знать
+iabbliz|2013/08/26 13:05:54|Надо перезайти в 1с
+iabbliz|2013/08/26 13:06:25|Сделал по поводу ЗагрузкаЗаданийНаРаскрой - Характеристики,
+и Отбор по складу ВыгрузкаВСОР
+iabbliz|2013/08/26 13:07:00|<quote author="iabbliz" authorname="Антон Иванов" conversation="mike_krivdiuk" guid="xfbf1c9cb3d3e4722338db561329d925389d05695160c413a88817e16c9664fb4" timestamp="1377522385"><legacyquote>[17:06:25] Антон Иванов: </legacyquote>Сделал по поводу ЗагрузкаЗаданийНаРаскрой - Характеристики,<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>т.е. при поиске характеристики, только по стороне Активации, в случае если Ширина Рулона &gt; 5000
+mike_krivdiuk|2013/08/26 13:07:30|это 30-й дефект (последний который), да?
+mike_krivdiuk|2013/08/26 13:08:09|и 29-й (склад)?
+iabbliz|2013/08/26 13:08:23|это вот это
+
+<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x2daa8c5f552e2f056c23bf1b3e1dc5789c8b0cd2ac4304dde4b64a910cb8aa02" timestamp="1377516715"><legacyquote>[15:31:55] Mike Krivdyuk: </legacyquote>&quot;1) Создать новый документ;
+2) Заполнить Площадку - БM;
+3) Заполнить Файл - S:\BM\Release\solution_БМ0000008_26082013.xml
+4) Нажать кнопку Заполнить
+
+Система должна корректно загрузить характеристики исходных рулонов.&quot;
+&quot;Во второй карте раскроя (второе задание на первичную резку) некорректно загружаются характеристики исходного рулона: &quot;&quot;1050,152,Корона внешняя,ГП,Да&quot;&quot;
+Т.к. исходный рулон для задания - маточный рулон, то должна быть привязана только характеристика со стороной активации (Корона внешняя).&quot;<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>
+наверно 30, у меня нет еще этого деффекта
+iabbliz|2013/08/26 13:08:33|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x92c0dccd298b43533cb48c1a2a9b406c8a4847f97bdb016cb6a9d81a133ae9af" timestamp="1377522489"><legacyquote>[17:08:09] Mike Krivdyuk: </legacyquote>и 29-й (склад)?<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>да
+iabbliz|2013/08/26 13:40:34|отлично
+mike_krivdiuk|2013/08/26 13:44:17|Антон, а где у рулона склад?
+mike_krivdiuk|2013/08/26 13:44:39|через подразделение можно понять только? т.е. реквизита Склад нет?
+iabbliz|2013/08/26 13:45:09|несколько все иначе
+iabbliz|2013/08/26 13:45:11|надо показать
+mike_krivdiuk|2013/08/26 13:45:22|или это опять какой-нить регистр сведений надо смотреть? <ss type="smile">:)</ss>
+mike_krivdiuk|2013/08/26 13:45:31|давай, показывай <ss type="smile">:)</ss>
+iabbliz|2013/08/26 13:45:34|регистр накопления
+iabbliz|2013/09/10 08:54:31|Привет, Михаил
+iabbliz|2013/09/10 08:54:38|да
+iabbliz|2013/09/10 09:28:07|можно позвонить?
+mike_krivdiuk|2013/09/10 09:29:27|да
+iabbliz|2013/09/10 10:03:26|я тут
+iabbliz|2013/09/12 12:38:26|Привет
+mike_krivdiuk|2013/09/12 12:38:26|можем по вопросам сейчас пообщаться?
+iabbliz|2013/09/12 12:39:34|можно через 5 мин?
+mike_krivdiuk|2013/09/12 12:40:35|давай... у меня в 17.00 следующая встреча
+iabbliz|2013/09/12 12:40:51|уххх
+iabbliz|2013/09/12 12:41:02|давай тогда
+iabbliz|2013/09/12 12:41:04|сейчас
+iabbliz|2013/09/12 13:08:46|тут
+iabbliz|2013/09/12 13:08:58|отходил
+iabbliz|2013/09/12 13:34:40|тут?
+iabbliz|2013/09/12 13:34:44|можно быстро позвонить спросить?
+mike_krivdiuk|2013/09/12 13:34:51|да
+iabbliz|2013/09/16 07:37:05|Привет, Михаил.
+iabbliz|2013/09/16 07:37:11|Как будет время напиши.
+mike_krivdiuk|2013/09/16 08:05:15|что-то срочное?
+iabbliz|2013/09/16 08:06:23|В принципе письмо написал по этому поводу.
+iabbliz|2013/09/16 08:06:46|просто на словах проговорили некоторые изменения в файлах примерах и
+mike_krivdiuk|2013/09/16 08:06:52|ок, гляну чуть попозже
+iabbliz|2013/09/16 08:07:08|лучше бы, чтобы ты их внес в файлы, и вновь прислал. Чтобы не получилось что мы поразному поняли
+iabbliz|2013/09/16 08:07:19|могу написать те моменты
+iabbliz|2013/09/16 08:07:32|которые проговорили
+iabbliz|2013/09/16 08:08:58|И еще есть вопрос: 
+- Для первичных резок где указаны вторичные резки (не ссылки на блок), там они будут также выделены в Блок вторичной резки?
+iabbliz|2013/09/16 10:48:34|а в Xtrim не могли уже по новым схемам читать?
+iabbliz|2013/09/16 10:49:01|Изменение &quot;Убрать тег “ProductTypes” и добавить тег &quot;ReelTypes&quot; организовать способ указания соотвествия в РС: &quot;Соотвествие 1с и СОР объектов&quot;&quot;
+iabbliz|2013/09/17 06:25:30|Привет, Михаил.
+iabbliz|2013/09/17 06:37:49|Отправил письмом вопросы
+iabbliz|2013/09/24 11:01:48|Привет
+mike_krivdiuk|2013/09/24 11:01:51|видел письмо с ошибками?
+mike_krivdiuk|2013/09/24 11:01:58|посмотришь сегодня?
+iabbliz|2013/09/24 11:02:50|судя по сообщениям необходимо в РС: прописать соотвествия новые
+iabbliz|2013/09/24 11:03:15|самому прописать?
+mike_krivdiuk|2013/09/24 11:04:32|ну, там что чему должно соответствовать?
+mike_krivdiuk|2013/09/24 11:04:54|я просто справочника нового с типами обработки пока не видел
+mike_krivdiuk|2013/09/24 11:05:01|они заведены, как я понимаю?
+iabbliz|2013/09/24 11:05:10|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x5663cb6ccc28d3aad8526f7a1d5e907a21820ddf0904ff7e0fa571955d5f3a6b" timestamp="1380020694"><legacyquote>[15:04:54] Mike Krivdyuk: </legacyquote>я просто справочника нового с типами обработки пока не видел<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>еще раз?
+iabbliz|2013/09/24 11:13:14|   &lt;enumeration value=&quot;Block&quot;/&gt;
+   &lt;enumeration value=&quot;Re-slitting&quot;/&gt;
+   &lt;!-- Order from block (campain) / Заказ, включенный в блок --&gt;
+   &lt;!-- Oder from stock / Заказ, привязанный к рулону на складе (перерезка) --&gt;
+iabbliz|2013/09/24 11:14:27|   &lt;enumeration value=&quot;OK&quot;/&gt;
+   &lt;enumeration value=&quot;BAD&quot;/&gt;
+iabbliz|2013/09/24 11:15:46|   &lt;enumeration value=&quot;JUMBO&quot;/&gt;
+   &lt;enumeration value=&quot;PARENT&quot;/&gt;
+iabbliz|2013/09/24 13:41:47|минуту
+iabbliz|2013/09/24 13:42:34|да
+iabbliz|2013/09/24 13:42:36|тут
+mike_krivdiuk|2013/09/25 13:15:10|
+iabbliz|2013/09/30 13:34:53|Привет Михаил
+iabbliz|2013/09/30 13:35:40|ты помойму ранее уже присылал письмом, еще раз уточню
+iabbliz|2013/09/30 13:35:56|вот есть документы которые загружаются в 1с
+iabbliz|2013/09/30 13:36:07|solution_ББ0000004_30092013
+solution_ББ0000007.1_30092013
+iabbliz|2013/09/30 13:36:40|<quote author="iabbliz" authorname="Антон Иванов" conversation="mike_krivdiuk" guid="xb2385a6eaa73459c079aaa47b64029d196e9403429d9428bc4306fe440bad438" timestamp="1380548167"><legacyquote>[17:36:07] Антон Иванов: </legacyquote>ББ0000004<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>и 
+ББ0000007.1 
+это номера документов в 1с ВыгрузкаВСОР?
+mike_krivdiuk|2013/09/30 13:37:54|да, это должен быть номер выгрузки в СОР (если у вас сквозная нумерация)
+mike_krivdiuk|2013/09/30 13:38:12|там, я заметил, может быть путаница из-за префика площадки
+iabbliz|2013/09/30 13:38:33|префикс в имени файла есть?
+mike_krivdiuk|2013/09/30 13:38:43|т.е. вроде как это не уникальный номер документа Выгрузка в СОР
+mike_krivdiuk|2013/09/30 13:38:58|нет, я про ББ/БМ и т.п.
+iabbliz|2013/09/30 13:39:28|в имени файла нет префикса?
+mike_krivdiuk|2013/09/30 13:42:12|есть: в имени файла solution_ББ0000007.1_30092013 есть префикс площадки в номере документа &quot;Выгрузка в СОР&quot;. Это ББ
+iabbliz|2013/09/30 13:43:35|хорошо, раз префикс есть значит номер уникален в пределах года
+iabbliz|2013/09/30 13:43:43|спасибо
+iabbliz|2013/09/30 13:44:59|<quote author="mike_krivdiuk" authorname="Mike Krivdyuk" conversation="mike_krivdiuk" guid="x9d5f68ff7ccc32a2c160754c6da1e638a23abac3348986c430dd18090874cac8" timestamp="1380548532"><legacyquote>[17:42:12] Mike Krivdyuk: </legacyquote>ББ0000007.1<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>а что за .1, вроде 9 символов номер у документа ВыгрузкаВСОР
+mike_krivdiuk|2013/09/30 13:46:43|а-а-а... давай созвонимся, так долго будт объяснять

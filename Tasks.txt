@@ -1,0 +1,25 @@
+SELECT
+   Tasks.id_Task,
+   Tasks.Name,
+   Tasks.Description,
+   Tasks.id_Worker,
+   Tasks.id_Chief,
+   Workers.Name AS Worker,
+   Chief.Name AS Chief, 
+   Tasks.Date
+
+FROM Tasks
+   LEFT JOIN (SELECT 
+      Workers.id_Worker,
+      Workers.Name,
+      Posts.Name AS Post
+  FROM Workers
+      LEFT JOIN (SELECT Posts.id_Post, Posts.Name FROM Posts) Posts ON Posts.id_Post=Workers.id_Post
+) Workers ON Workers.id_Worker=Tasks.id_Worker
+   LEFT JOIN (SELECT 
+      Workers.id_Worker,
+      Workers.Name,
+      Posts.Name AS Post
+  FROM Workers
+      LEFT JOIN (SELECT Posts.id_Post, Posts.Name FROM Posts WHERE Posts.id_Post=1) Posts ON Posts.id_Post=Workers.id_Post
+WHERE Posts.Name is not null) Chief ON Chief.id_Worker=Tasks.id_Chief

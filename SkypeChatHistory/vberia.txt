@@ -1,0 +1,25 @@
+author|0|body_xml
+vberia|2013/04/12 08:30:11|
+iabbliz|2013/04/16 08:54:34|Привет на Mightyserver
+iabbliz|2013/04/16 08:54:36|диск Д
+iabbliz|2013/04/16 08:54:38|места нет
+iabbliz|2013/04/16 09:45:31|Кажется я знаю куда место делось
+iabbliz|2013/04/16 09:45:36|напиши как появишься
+iabbliz|2013/04/16 09:45:40|отошел на обед
+iabbliz|2013/04/16 10:15:40|<quote author="iabbliz" authorname="Антон Иванов" conversation="sapervodichka" guid="x77bb125f06ae5da8314e612d3aeaff80337b7c46354f614d460ef0115c1883d3" timestamp="1366107298"><legacyquote>[14:14:58] Антон Иванов: </legacyquote>Вообщем надо зайти в MSSQL и для всех баз поменять режим восстановлени с полного на простой
+допустим КругМодел
+база вести 1.5 Гб
+а логов уже на 40
+журнала транзакций<legacyquote>
+
+&lt;&lt;&lt; </legacyquote></quote>
+iabbliz|2013/04/16 10:29:51|Еще ничего не делал?
+vberia|2013/04/16 10:30:28|Нет, 36 Гб свободно.
+iabbliz|2013/05/09 04:46:18|Привет
+iabbliz|2013/05/09 04:46:28|Не могу подключится к серверу..
+iabbliz|2013/06/19 05:33:16|Привет
+iabbliz|2013/06/19 05:33:27|почему то со вчерашнего утра, перестала работать почта
+iabbliz|2013/06/19 05:33:36|захожу в почту по <a href="http://mail.razdolie.ru/owa/">http://mail.razdolie.ru/owa/</a>
+iabbliz|2013/06/19 05:48:53|Я ж удаленно работаю поэтому не в курсе
+iabbliz|2013/06/19 05:48:59|можешь подсказать Админа контакт?
+vberia|2013/06/19 05:49:31|<contacts alt="[Contacts enclosed. Please upgrade to latest Skype version to receive contacts.]"><c t="s" s="duboviksv" f="Станислав 'Diego'  Дубовик"/></contacts>
